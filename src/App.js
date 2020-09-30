@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Home from './containers/Home/Home';
+import Header from './containers/Header/Header';
+import Endless from './containers/Home/Endless/Endless';
+import Favorites from './containers/Favorites/Favorites';
+import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/breed/:selectedDog' component={Endless} />
+            <Route path='/favorites' component={Favorites} />
+            <Route render={() => (<h1>404 нету такой страницу у нас, извинити</h1>)} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    selectedDog: state.dogs.selectedDog
+  }
+}
+
+export default connect(mapStateToProps)(App);

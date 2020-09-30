@@ -1,0 +1,49 @@
+.DogCard {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.DogCard .Favorites {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgb(14, 14, 14, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.DogCard:hover .Favorites {
+    visibility: visible;
+    opacity: 1;
+}
+
+.DogCard div {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.DogCard div img{
+    width: 100%;
+    height: auto;
+}
+
+.DogCard p {
+    font-size: 16px;
+    text-transform: capitalize;
+}

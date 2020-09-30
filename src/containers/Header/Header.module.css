@@ -1,0 +1,31 @@
+.Header {
+    text-align: left;
+    font-size: 20px;
+}
+
+.Header ul {
+    list-style: none;
+}
+
+.Header ul li {
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.Header select {
+    border: none;
+    font: inherit;
+    padding: 5px 0px;
+    font-size: 20px;
+}
+
+.Header a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Header a:active,
+.Header a:hover,
+.Header a.active {
+    color: rgb(78, 199, 255);
+}
