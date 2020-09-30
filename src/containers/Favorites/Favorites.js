@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import DogCard from '../../components/DogCard/DogCard';
+import classes from '../Home/Home.module.css';
 
 class Favorites extends Component {
     render() {
@@ -19,7 +20,7 @@ class Favorites extends Component {
             ));
         } 
         return(
-            <div>
+            <div className={classes.Home}>
                 {grid}
             </div>
         );
